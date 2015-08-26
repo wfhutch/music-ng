@@ -1,0 +1,54 @@
+
+{
+  "songs": [
+
+    { 
+      "name": "The Logical Song",
+      "artist": "Supertramp",
+      "album": "Breakfast in America",
+      "genre": "Pop"    
+    },
+   
+    { 
+      "name": "Another Brick in the Wall",
+      "artist": "Pink Floyd",
+      "album": "The Wall",
+      "genre": "Rock"     
+    },
+    
+    {
+      "name": "Welcome to the Jungle",
+      "artist": "Guns & Roses",
+      "album": "Appetite for Destruction",
+      "genre": "Rock"     
+    },
+
+        { 
+      "name": "Mother",
+      "artist": "Pink Floyd",
+      "album": "The Wall",
+      "genre": "Pop"    
+    },
+   
+    { 
+      "name": "Hey You",
+      "artist": "Pink Floyd",
+      "album": "The Wall",
+      "genre": "Rock"     
+    },
+    
+    {
+      "name": "Amsterdam",
+      "artist": "Coldplay",
+      "album": "A Rush Of Blood To The Head",
+      "genre": "Rock"     
+    },    
+
+    {
+      "name": "Time",
+      "artist": "Pink Floyd",
+      "album": "Dark Side Of The Moon",
+      "genre": "Rock"     
+    }
+  ]
+}

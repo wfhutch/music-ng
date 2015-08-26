@@ -1,0 +1,41 @@
+
+{
+  "songs": [
+    
+    { 
+      "name": "ironic",
+      "artist": "Alanis Morisette",
+      "album": "Jagged Little Pill"      
+    },
+   
+    { 
+      "name": "Waking Light",
+      "artist": "Beck",
+      "album": "Morning Phase"      
+    },
+   
+    { 
+      "name": "There's No Way Out Of Here",
+      "artist": "David Gilmour",
+      "album": "David Gilmour"      
+    },
+
+    { 
+      "name": "The Scientist",
+      "artist": "Coldplay",
+      "album": "A Rush Of Blood To The Head"      
+    },
+   
+    { 
+      "name": "Blue Moon",
+      "artist": "Beck",
+      "album": "Morning Phase"      
+    },
+   
+    { 
+      "name": "Raise My Rent",
+      "artist": "David Gilmour",
+      "album": "David Gilmour"      
+    }
+  ]
+}

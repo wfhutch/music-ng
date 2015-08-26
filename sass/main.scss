@@ -1,0 +1,29 @@
+body {
+  padding: 100px;
+}
+
+nav {
+  display: inline-block;
+}
+
+.nav-li {
+  display: inline-block;
+  padding: 30px;
+  font-size: 16px;
+}
+
+.nav-li a {
+  color: blue;
+}
+
+.nav li:first-child {
+  margin-left: 20px;
+}
+
+.glyphicon.glyphicon-equalizer {
+  font-size: 30px;
+}
+
+#song-container {
+  margin-top: 50px;
+}
