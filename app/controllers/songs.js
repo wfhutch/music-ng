@@ -1,6 +1,5 @@
 app.controller("SongsCtrl", function($scope, $q) {
 
-
   $scope.newSong = {
     name: "",
     artist: "",
@@ -40,19 +39,19 @@ app.controller("SongsCtrl", function($scope, $q) {
 
     getSongList()
       .then(function(Data) {
-        console.log(Data);
+        // console.log(Data);
         for (i=0; i<Data.length; i++) {
           $scope.allSongs.push(Data[i]);
         }
-        console.log($scope.allSongs);
+        // console.log($scope.allSongs);
         return getMoreList();
       })
       .then(function(moreSongs) {
-        console.log(moreSongs);
+        // console.log(moreSongs);
           for (i=0; i<moreSongs.length; i++) {
           $scope.allSongs.push(moreSongs[i]);
         }
-          console.log($scope.allSongs);
+          // console.log($scope.allSongs);
       });
         // function(error) {
         //   console.log("error", error);
@@ -83,7 +82,9 @@ app.controller("SongsCtrl", function($scope, $q) {
         function(error) {
           console.log("error", error);
         });
-
 });
+
+
+
 
 

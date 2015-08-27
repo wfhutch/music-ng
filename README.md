@@ -1,1 +1,2 @@
 # music-ng
+8/27/15 - Added angular-route. Populated page using ajax calls to two different json files.  Added app.config and created song-detail controller.  One ajax call to put song titles on the page and a second ajax call in song-detail.js to loop through all songs and find matching song id and put artist and album info on the page for that song.

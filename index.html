@@ -21,8 +21,26 @@
     </div>
   </nav>
 
+  <div ng-view></div>
 
-  <div class="container-fluid" ng-controller="SongsCtrl">  <!-- div that holds whold grid -->
+  <footer></footer>
+<script src="lib/bower_components/angular/angular.min.js"></script>
+<script src="lib/bower_components/angular-route/angular-route.js"></script>
+<script src="lib/bower_components/angular-filter/dist/angular-filter.min.js"></script>
+<script src="lib/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="app/app.js"></script>
+<script src="app/factories/song-storage.js"></script>
+<script src="app/filters/capitalize.js"></script>
+<script src="app/filters/sort.js"></script>
+<script src="app/controllers/songs.js"></script>
+<script src="app/controllers/song-detail.js"></script>
+
+
+</body>
+</html>
+
+
+<div class="container-fluid" ng-controller="SongsCtrl">  <!-- div that holds whold grid -->
     <div class="row">
       <div class="col-md-4">  <!--start of Album and Artist select boxes -->
 
@@ -34,14 +52,14 @@
 
 
 
-        <div class="row">  
+  <!--       <div class="row">  
           <div class="col-sm-5">
             Artist:<select 
               ng-model="theSong"
               ng-options="value.artist for value in allSongs | unique: 'artist'">
               <options>--</options>
             </select>
-          </div>  <!-- end of album select -->
+          </div>  end of album select
           <div class="col-sm-2"></div>
           <div class="col-sm-5">
             Album:<select 
@@ -49,8 +67,8 @@
               ng-options="value.album for value in allSongs | unique: 'album'">
               <options>--</options>
             </select>
-          </div>  <!-- end of artist select -->
-        </div>   <!-- end of select box group -->
+          </div>  end of artist select
+        </div>   end of select box group
         <div class="row">
           <div id="song-container">
             Song name:<input id="song-name" type="text" ng-model="newSong.name"/>
@@ -62,40 +80,14 @@
             Album:<input id="album-name" type="text" ng-model="newSong.album"/>
           </div>
           <button ng-click="addSong()">Add Song</button>
-        </div>  <!-- end of new song input div -->
-      </div>  <!-- end of options box column -->
+        </div>  end of new song input div
+      </div>  end of options box column
       
-      <div class="col-md-1"></div>  <!-- end of spacer column -->
+      <div class="col-md-1"></div>  end of spacer column
       <div class="col-md-7">
-        <div>
-          <ul class="songs-list" ng-repeat="song in allSongs">
-            <li><h3>{{song.name | capitalize}}</h3>
-              <p>By: {{song.artist | sort}}</p>
-              <p>Album: {{song.album}}</p>
-              <button ng-click="killSong(song)">Delete</button>
-            </li>
-          </ul>
-        </div>
-      </div>  <!-- end of songs display column -->
+
+      </div>  end of songs display column
     </div>
-  </div>  <!-- end of "container-fluid" div -->
+  </div>  end of "container-fluid" div -->
 
 
-  <article>
-    <header></header>
-    <section></section>
-    <footer></footer>
-  </article>
-
-  <footer></footer>
-<script src="lib/bower_components/angular/angular.min.js"></script>
-<script src="lib/bower_components/angular-filter/dist/angular-filter.min.js"></script>
-<script src="lib/bower_components/jquery/dist/jquery.min.js"></script>
-<script src="app/app.js"></script>
-<script src="app/filters/capitalize.js"></script>
-<script src="app/filters/sort.js"></script>
-<script src="app/controllers/songs.js"></script>
-
-
-</body>
-</html>
