@@ -1,73 +1,28 @@
 
-app.controller('SongDetailCtrl', function($scope, $routeParams, $q) {
+app.controller("SongDetailCtrl", 
+  ["$scope", 
+  "$routeParams", 
+  "song-storage",
+  
+  function($scope, $routeParams, song_storage) {
+    $scope.selectedSong = {};
     $scope.songId = $routeParams.songId;
-    console.log($scope.songId);
-    $scope.allSongsArray = [];
-    $scope.song = {};
 
-  function getSongListId() {
-    return $q(function(resolve, reject) {
+    console.log("$scope.songId", $scope.songId);
 
-      $.ajax({
-        url: "./data/songs1.json"
-      })
-      .done(function(response) {
-        resolve(response.songs);
-      })
-      .fail(function(xhr, status, error) {
-        reject(error);
-      });
+    song_storage.then(
+      function(promiseResolutionData) {
+        console.log("promiseResolutionData", promiseResolutionData);
 
-      });
-    }
+        $scope.selectedSong = promiseResolutionData.filter(function(song) {
+          return song.id === parseInt($scope.songId);
+        })[0];
 
-    getSongListId()
-      .then(function(Data) {
-        for (i=0; i<Data.length; i++) {
-          $scope.allSongsArray.push(Data[i]);
-        }
-        return getMoreListId();
-      })
-      .then(function(moreSongs) {
-        for (i=0; i<moreSongs.length; i++) {
-          $scope.allSongsArray.push(moreSongs[i]);
-        }
-      })
-      .then(function() {
-        for (i=0; i<$scope.allSongsArray.length; i++) {
-          if($scope.allSongsArray[i].id == $scope.songId) {
-            $scope.song = $scope.allSongsArray[i];
-          }
-        }
-      });
-        // function(error) {
-        //   console.log("error", error);
-        // }
-
-  function getMoreListId() {
-    return $q(function(resolve, reject) {
-
-      $.ajax({
-        url: "./data/songs2.json"
-      })
-      .done(function(response) {
-        resolve(response.songs);
-      })
-      .fail(function(xhr, status, error) {
-        reject(error);
-      });
-
-      });
-    }
-
-    getMoreListId()
-      .then(
-        function(promiseResolutionData) {
-          $scope.songs = promiseResolutionData;
-        },
-        function(error) {
-          console.log("error", error);
-        });
-});
-
-
+        console.log("$scope.selectedSong", $scope.selectedSong);
+      },
+      function(promiseRejectionError) {
+        console.log("error", promiseRejectionError);
+      }
+    );
+  }
+]);

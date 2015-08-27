@@ -5,7 +5,7 @@ app.config(['$routeProvider',
     $routeProvider.
       when('/songs', {
         templateUrl: 'partials/songs-list.html',
-        controller: 'SongsCtrl'
+        controller: 'SongCtrl'
       }).
       when('/songs/:songId', {
         templateUrl: 'partials/song-detail.html',
