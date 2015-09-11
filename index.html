@@ -9,40 +9,45 @@
 
 </head>
 
-<body ng-app="MusicApp">
+<body>
 
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid nav-div">
       <span class="glyphicon glyphicon-equalizer" aria-hidden="true"></span>
-      <li class="nav-li"><a href="#">Home</a></li>
-      <li class="nav-li"><a href="songs.html">Add Music</a></li>
-      <li class="nav-li"><a href="#">View Music</a></li>
-      <li class="nav-li"><a href="#">Profile</a></li>
+      <li class="nav-li"><a href="#/songs">Home</a></li>
+      <li class="nav-li"><a href="#">Add Music</a></li>
+      <form class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input id="search-box" type="text" class="form-control" ng-model="search" placeholder="Search">
+        </div>
+      </form>
     </div>
   </nav>
 
   <div ng-view></div>
 
   <footer></footer>
-<script src="lib/bower_components/angular/angular.min.js"></script>
-<script src="lib/bower_components/angular-route/angular-route.js"></script>
-<script src="lib/bower_components/angular-filter/dist/angular-filter.min.js"></script>
-<script src="lib/bower_components/jquery/dist/jquery.min.js"></script>
-<script src="app/app.js"></script>
-<script src="app/factories/song-storage.js"></script>
-<script src="app/filters/capitalize.js"></script>
-<script src="app/filters/sort.js"></script>
-<script src="app/controllers/songs.js"></script>
-<script src="app/controllers/song-detail.js"></script>
 
+<!--   // <script src="lib/bower_components/requirejs/require.js"></script>
+  // <script src="main-built.js"></script> -->
+
+
+  <script src="lib/bower_components/requirejs/require.js" data-main="app/require-config.js"></script>
+
+ <!-- <script src="app/app.js"></script>
+  // <script src="app/factories/song-storage.js"></script>
+  // <script src="app/filters/capitalize.js"></script>
+  // <script src="app/filters/sort.js"></script>
+  // <script src="app/controllers/songs.js"></script>
+  // <script src="app/controllers/song-detail.js"></script> -->
 
 </body>
 </html>
 
 
-<div class="container-fluid" ng-controller="SongCtrl">  <!-- div that holds whold grid -->
-    <div class="row">
-      <div class="col-md-4">  <!--start of Album and Artist select boxes -->
+<!-- <div class="container-fluid" ng-controller="SongCtrl"> -->  <!-- div that holds whold grid -->
+<!--     <div class="row">
+      <div class="col-md-4"> -->  <!--start of Album and Artist select boxes -->
 
 
 
@@ -52,7 +57,7 @@
 
 
 
-  <!--       <div class="row">  
+        <!-- <div class="row">  
           <div class="col-sm-5">
             Artist:<select 
               ng-model="theSong"
@@ -88,6 +93,7 @@
 
       </div>  end of songs display column
     </div>
-  </div>  end of "container-fluid" div -->
+  </div>  end of "container-fluid" div
 
 
+ -->

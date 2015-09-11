@@ -1,6 +1,8 @@
 
-<div class="songs-list" ng-repeat="song in songs">
+
+<div class="songs-list" ng-repeat="song in songs | filter: search">
   <a href="#/songs/{{song.id}}"><h3>{{song.name}}</h3></a>
+  <button class="btn btn-xs btn-danger">Delete</button>
 </div>
 
 

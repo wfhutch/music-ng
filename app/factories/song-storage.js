@@ -1,24 +1,7 @@
-app.factory("song-storage", function($q, $http) {
+// app.factory("song-storage", function($q, $http, $firebaseArray) {
 
-  function getSongList() {
+//   var ref = new Firebase("https://music-ng.firebaseio.com/songs");
 
-    // Return a promise for our async XHR
-    return $q(function(resolve, reject) {
+//   return $firebaseArray(ref);
 
-      // Perform some asynchronous operation, resolve or reject 
-      // the promise when appropriate.
-      $http.get('./data/songs1.json')
-      .success(
-        function(objectFromJSONFile) {
-          console.log(objectFromJSONFile);
-          resolve(objectFromJSONFile.songs);
-        },function(error) {
-          reject(error);
-        }
-      );
-
-    });
-  }
-
-  return getSongList();
-});
+// });
