@@ -17,10 +17,6 @@ requirejs.config({
     'angularRoute': ['angular'],
     'angularfire': ['angular', 'firebase'],
     'angularFilter': ['angular'],
-    'angularMocks': {
-      deps:['angular'],
-      'exports':'angular.mock'
-    },
     'bootstrap': ['jquery'],
     'firebase': {
       exports:'Firebase'

@@ -4,7 +4,7 @@ define([
   'angularfire',
   'angularFilter',
   'views/songlist',
-  'views/songdetail'
+  'views/songdetail',
 ], function(angular, angularRoute, angularfire, filter, songs, songdetail) {
 
   return angular.module("MusicApp", [
@@ -12,7 +12,7 @@ define([
       'ngRoute',
       'firebase',
       'MusicApp.songList',
-      'MusicApp.songDetail'
+      'MusicApp.songDetail',
     ]).
     config(['$routeProvider', function($routeProvider) {
         $routeProvider.otherwise({redirectTo: '/'});

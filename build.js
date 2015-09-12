@@ -27,7 +27,7 @@
     }
 
   },
-    name: "app",
+    name: "require-config",
     out: "main-built.js"
 
 });

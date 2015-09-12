@@ -15,7 +15,6 @@
     <div class="container-fluid nav-div">
       <span class="glyphicon glyphicon-equalizer" aria-hidden="true"></span>
       <li class="nav-li"><a href="#/songs">Home</a></li>
-      <li class="nav-li"><a href="#">Add Music</a></li>
       <form class="navbar-form navbar-right" role="search">
         <div class="form-group">
           <input id="search-box" type="text" class="form-control" ng-model="search" placeholder="Search">
@@ -45,55 +44,3 @@
 </html>
 
 
-<!-- <div class="container-fluid" ng-controller="SongCtrl"> -->  <!-- div that holds whold grid -->
-<!--     <div class="row">
-      <div class="col-md-4"> -->  <!--start of Album and Artist select boxes -->
-
-
-
-
-
-
-
-
-
-        <!-- <div class="row">  
-          <div class="col-sm-5">
-            Artist:<select 
-              ng-model="theSong"
-              ng-options="value.artist for value in allSongs | unique: 'artist'">
-              <options>--</options>
-            </select>
-          </div>  end of album select
-          <div class="col-sm-2"></div>
-          <div class="col-sm-5">
-            Album:<select 
-              ng-model="theSong"
-              ng-options="value.album for value in allSongs | unique: 'album'">
-              <options>--</options>
-            </select>
-          </div>  end of artist select
-        </div>   end of select box group
-        <div class="row">
-          <div id="song-container">
-            Song name:<input id="song-name" type="text" ng-model="newSong.name"/>
-          </div>
-          <div>
-            Artist:<input id="artist-name" type="text" ng-model="newSong.artist"/>
-          </div>
-          <div>
-            Album:<input id="album-name" type="text" ng-model="newSong.album"/>
-          </div>
-          <button ng-click="addSong()">Add Song</button>
-        </div>  end of new song input div
-      </div>  end of options box column
-      
-      <div class="col-md-1"></div>  end of spacer column
-      <div class="col-md-7">
-
-      </div>  end of songs display column
-    </div>
-  </div>  end of "container-fluid" div
-
-
- -->
