@@ -1,5 +1,5 @@
-body {
-  padding: 100px;
+  body {
+  padding: 50px;
 }
 
 nav {
@@ -36,6 +36,46 @@ nav {
 #addSong-btn {
   margin-top: 15px;
 }
+
+.right-side {
+  position: relative;
+  left: 40%;
+  // display: block;
+}
+
+.left-side {
+  position: fixed;
+  // float: left;
+}
+
+#search-div {
+  margin-bottom: 15px;
+}
+
+.select-box {
+  margin-bottom: 15px;
+}
+
+@media screen and (max-width: 820px) {
+    .right-side {
+      position: static;
+      left: 0;
+      margin-top: 360px;
+    }
+    .left-side {
+      position: static;
+    }
+}
+
+.css-form input.ng-invalid.ng-touched {
+  background-color: #FA787E;
+}
+
+.css-form input.ng-valid.ng-touched {
+  background-color: #78FA89;
+}
+
+
 
 
 

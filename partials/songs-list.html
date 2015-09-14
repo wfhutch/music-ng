@@ -1,64 +1,77 @@
 
 <div class="container-fluid">  <!-- div that holds whold grid -->
+
+
   <div class="row">
-    <div class="col-md-4">  <!-- start of Album and Artist select boxes --> 
-      <div class="row">  
-        <div class="col-sm-12">
-          <label>Artist:</label>
-          <select class="form-control" 
-            ng-model="theArtist"
-            ng-options="value.artist for value in songs | unique: 'artist' | filter: theAlbum.artist">
-            <options>--</options>
-          </select>
-        </div>  
-      </div>   <!-- end of artist select -->
-      <div class="row">
-        <div class="col-sm-12">
-          <label>Album:</label>
-          <select class="form-control"
-            ng-model="theAlbum"
-            ng-options="value.album for value in songs | unique: 'album' | filter: {artist: theArtist.artist}">
-          </select>
-        </div>  
-      </div> <!-- end of album select -->
-      <div class="row">
-        <div id="song-container">
-          <div>
-            <h3>Add New Music</h3>
+    <section class="left-side">
+
+      <div id="search-div">  <!-- start search box div -->
+        <div class="row">
+          <div class="col-sm-12">
+            <input id="search-box" type="text" class="form-control" ng-model="search" placeholder="Search">
           </div>
-          <div>
-            <label>Song name:</label>
-          </div>
-          <div>
-            <input id="song-name" type="text" ng-model="newSong.name"/>
-          </div>
-          <div>
-            <label>Artist name:</label>
-          </div>
-          <div>
-            <input id="artist-name" type="text" ng-model="newSong.artist"/>
-          </div>
-          <div>
-            <label>Album name:</label>
-          </div>
-          <div>
-            <input id="album-name" type="text" ng-model="newSong.album"/>
-          </div>
-          <div id="addSong-btn">
-            <button class="btn btn-sm btn-success" ng-click="addSong()">Add Song</button>
-          </div>
+        </div>
+      </div>
+
+      <div class="col-md-7">  <!-- start of Album and Artist select boxes --> 
+        <div class="row">  
+          <div class="col-sm-12 select-box">
+            Artist:<select class="form-control"
+              ng-model="theArtist"
+              ng-options="value.artist for value in newSongs | unique: 'artist' | filter: theAlbum.artist">
+              <options>--</options>
+            </select>
+          </div>  
+        </div>   <!-- end of artist select -->
+        <div class="row">
+          <div class="col-sm-12 select-box">
+            Album:<select class="form-control"
+              ng-model="theAlbum"
+              ng-options="value.album for value in newSongs | unique: 'album' | filter: {artist: theArtist.artist}">
+            </select>
+          </div>  
+        </div> <!-- end of album select -->
+        <div class="row">
+          <div id="song-container">
+            <div>
+              <h3>Add New Music</h3>
+            </div>
+            <div>
+              <label>Song name:</label>
+            </div>
+            <div>
+              <input id="song-name" type="text" ng-model="newSong.name"/>
+            </div>
+            <div>
+              <label>Artist name:</label>
+            </div>
+            <div>
+              <input id="artist-name" type="text" ng-model="newSong.artist"/>
+            </div>
+            <div>
+              <label>Album name:</label>
+            </div>
+            <div>
+              <input id="album-name" type="text" ng-model="newSong.album"/>
+            </div>
+            <div id="addSong-btn">
+              <button class="btn btn-sm btn-success" ng-click="addSong()">Add Song</button>
+            </div>
           </div>
         </div>  <!-- end of new song input div -->
       </div>  <!-- end of options box column -->
+    </section>
     <div class="col-md-1"></div>  <!-- end of spacer column -->
-    <div class="col-md-7">
+    <section class="right-side">
+      <div class="col-md-4">
 
-      <div class="songs-list" ng-repeat="song in songs | filter: search | filter: {album: theAlbum.album} | filter: {artist: theArtist.artist}">
-        <a href="#/songs/{{song.$id}}"><h3>{{song.name}}</h3></a>
-        <button class="btn btn-xs btn-danger" ng-click="deleteSong(song)">Delete</button>
-      </div>
+        <div class="songs-list" ng-repeat="song in newSongs | filter: search | filter: {album: theAlbum.album} | filter: {artist: theArtist.artist} | filter: uid">
+          <a href="#/songs/{{song.$id}}"><h3>{{song.name}}</h3></a>
+          <button class="btn btn-xs btn-danger" ng-click="deleteSong(song)">Delete</button>
+        </div>
 
-    </div>  <!-- end of songs display column -->
+      </div>  <!-- end of songs display column -->
+    </section>
   </div>
 </div>  <!-- end of "container-fluid" div -->
 

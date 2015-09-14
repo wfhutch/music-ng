@@ -5,7 +5,9 @@ define([
   'angularFilter',
   'views/songlist',
   'views/songdetail',
-], function(angular, angularRoute, angularfire, filter, songs, songdetail) {
+  'auth',
+  'factories/uidHandler',
+], function(angular, angularRoute, angularfire, filter, songs, songdetail, auth, uidHandler) {
 
   return angular.module("MusicApp", [
       'angular.filter',
@@ -13,6 +15,8 @@ define([
       'firebase',
       'MusicApp.songList',
       'MusicApp.songDetail',
+      'MusicApp.auth',
+      'MusicApp.getSetUid',
     ]).
     config(['$routeProvider', function($routeProvider) {
         $routeProvider.otherwise({redirectTo: '/'});
