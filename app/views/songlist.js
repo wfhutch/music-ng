@@ -34,6 +34,11 @@ define([
           console.log("error", error);
         });
 
+    $scope.logoutUser = function() {
+      console.log("logout clicked");
+      ref.unauth();
+    };
+
     $scope.addSong =function() {
       $scope.songs.$add({
         name: $scope.newSong.name,

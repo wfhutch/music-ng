@@ -48,6 +48,7 @@ define([
         }
       });
 
+
       $scope.loginEmail = $scope.user.loginEmail;
       $scope.loginPassword = $scope.user.loginPassword;
       console.log($scope.loginEmail, $scope.loginPassword);
