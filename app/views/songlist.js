@@ -37,6 +37,7 @@ define([
     $scope.logoutUser = function() {
       console.log("logout clicked");
       ref.unauth();
+      window.location = '#/';
     };
 
     $scope.addSong =function() {
@@ -49,6 +50,7 @@ define([
       $scope.newSong.name = "";
       $scope.newSong.album = "";
       $scope.newSong.artist = "";
+      window.location = '#/songs';
     };
 
     $scope.deleteSong = function(song) {
